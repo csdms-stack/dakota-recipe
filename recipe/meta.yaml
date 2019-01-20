@@ -1,0 +1,39 @@
+{% set name = "dakota" %}
+{% set version = "6.4" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://dakota.sandia.gov/sites/default/files/distributions/public/{{ name }}-{{ version }}-public.src.tar.gz
+  md5: 07f3fa0e366781ab55382e8536b58025
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - cmake
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
+  host:
+    -
+  run:
+    - 
+
+test:
+  commands:
+    - dakota --version
+
+about:
+  home: http://dakota.sandia.gov
+  license: LGPL-2.1
+  summary:
+    The Dakota toolkit provides a flexible, extensible interface
+    between simulation codes and a variety of iterative systems
+    analysis methods, including optimization, uncertainty
+    quantification, deterministic/stochastic calibration, and
+    parametric/sensitivity/variance analysis.
+  dev_url: http://dakota.sandia.gov
