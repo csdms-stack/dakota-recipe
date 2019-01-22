@@ -1,27 +1,29 @@
 {% set name = "dakota" %}
-{% set version = "6.4" %}
+{% set version = "6.9" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://dakota.sandia.gov/sites/default/files/distributions/public/{{ name }}-{{ version }}-public.src.tar.gz
-  md5: 07f3fa0e366781ab55382e8536b58025
+  url: https://dakota.sandia.gov/sites/default/files/distributions/public/{{ name }}-{{ version }}-release-public.src.tar.gz
+  md5: b2ce64fb8e93ea6db455f88b106d5f2b
 
 build:
   number: 0
 
 requirements:
   build:
-    - cmake
+    - cmake=3.3
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
-  host:
-    -
-  run:
-    - 
+    - boost
+    - blas
+    - lapack
+    - perl
+    - openmpi
+    - python
 
 test:
   commands:
