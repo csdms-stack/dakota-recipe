@@ -1,0 +1,10 @@
+--- packages/external/JEGA/Utilities/src/DiscreteDesignVariableNature.cpp.orig	2019-01-21 18:49:10.413653092 -0700
++++ packages/external/JEGA/Utilities/src/DiscreteDesignVariableNature.cpp	2019-01-21 18:49:17.442652765 -0700
+@@ -59,6 +59,7 @@
+ // JEGAConfig.hpp should be the first include in all JEGA files.
+ #include <../Utilities/include/JEGAConfig.hpp>
+ 
++#include <cmath>
+ #include <cfloat>
+ #include <limits>
+ #include <algorithm>

@@ -8,6 +8,8 @@ package:
 source:
   url: https://dakota.sandia.gov/sites/default/files/distributions/public/{{ name }}-{{ version }}-release-public.src.tar.gz
   md5: b2ce64fb8e93ea6db455f88b106d5f2b
+  patches:
+    - include-cmath.patch
 
 build:
   number: 0
