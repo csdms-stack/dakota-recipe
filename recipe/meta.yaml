@@ -20,12 +20,16 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
-    - boost
+    - boost=1.67
     - blas
     - lapack
     - perl
     - openmpi
     - python
+  run:
+    - libgcc-ng
+    - libgfortran-ng
+    - libstdcxx-ng
 
 test:
   commands:
