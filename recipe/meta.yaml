@@ -17,9 +17,10 @@ build:
 requirements:
   build:
     - cmake=3.3
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}        # [linux]
+    - {{ compiler('cxx') }}      # [linux]
+    - {{ compiler('fortran') }}  # [linux]
+    - gcc                        # [osx]
     - boost=1.67
     - blas
     - lapack
@@ -27,9 +28,12 @@ requirements:
     - openmpi
     - python
   run:
-    - libgcc-ng
-    - libgfortran-ng
-    - libstdcxx-ng
+    - libgcc                     # [osx]
+    - boost=1.67
+    - blas
+    - lapack
+    - perl
+    - openmpi
 
 test:
   commands:
@@ -44,4 +48,3 @@ about:
     analysis methods, including optimization, uncertainty
     quantification, deterministic/stochastic calibration, and
     parametric/sensitivity/variance analysis.
-  dev_url: http://dakota.sandia.gov
