@@ -21,7 +21,8 @@ requirements:
     - {{ compiler('cxx') }}      # [linux]
     - {{ compiler('fortran') }}  # [linux]
     - gcc                        # [osx]
-    - boost=1.67
+    - boost=1.67                 # [linux]
+    - boost-gcc=1.67             # [osx]
     - blas
     - lapack
     - perl
@@ -29,7 +30,8 @@ requirements:
     - python
   run:
     - libgcc                     # [osx]
-    - boost=1.67
+    - boost=1.67                 # [linux]
+    - boost-gcc=1.67             # [osx]
     - blas
     - lapack
     - perl
