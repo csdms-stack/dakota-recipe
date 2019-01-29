@@ -38,8 +38,9 @@ requirements:
     - openmpi
 
 test:
-  commands:
-    - dakota --version
+  requires:
+    - git
+    - python
 
 about:
   home: http://dakota.sandia.gov
