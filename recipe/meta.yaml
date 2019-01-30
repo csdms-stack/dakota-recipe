@@ -41,6 +41,7 @@ test:
   requires:
     - git
     - python
+    - numpy
 
 about:
   home: http://dakota.sandia.gov
