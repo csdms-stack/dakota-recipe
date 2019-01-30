@@ -12,17 +12,17 @@ source:
     - include-cmath.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - cmake=3.3
+    - cmake
     - {{ compiler('c') }}        # [linux]
     - {{ compiler('cxx') }}      # [linux]
     - {{ compiler('fortran') }}  # [linux]
     - gcc                        # [osx]
-    - boost=1.67                 # [linux]
-    - boost-gcc=1.67             # [osx]
+    - boost                      # [linux]
+    - boost-gcc                  # [osx]
     - blas
     - lapack
     - perl
@@ -30,16 +30,18 @@ requirements:
     - python
   run:
     - libgcc                     # [osx]
-    - boost=1.67                 # [linux]
-    - boost-gcc=1.67             # [osx]
+    - boost                      # [linux]
+    - boost-gcc                  # [osx]
     - blas
     - lapack
     - perl
     - openmpi
 
 test:
-  commands:
-    - dakota --version
+  requires:
+    - git
+    - python
+    - numpy
 
 about:
   home: http://dakota.sandia.gov
